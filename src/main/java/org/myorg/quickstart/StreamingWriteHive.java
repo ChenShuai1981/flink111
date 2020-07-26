@@ -12,7 +12,7 @@ import org.apache.flink.table.catalog.hive.HiveCatalog;
 
 import java.time.Duration;
 
-public class StreamingHive {
+public class StreamingWriteHive {
 
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment streamEnv = StreamExecutionEnvironment.getExecutionEnvironment();
@@ -102,8 +102,8 @@ public class StreamingHive {
                 "     FROM stream_tmp.analytics_access_log_kafka\n" +
                 "     WHERE merchandiseId > 0");
 
-        tableEnv.execute("StreamingHive");
-//        streamEnv.execute("StreamingHive");
+        tableEnv.execute("StreamingWriteHive");
+//        streamEnv.execute("StreamingWriteHive");
 
     }
 }
